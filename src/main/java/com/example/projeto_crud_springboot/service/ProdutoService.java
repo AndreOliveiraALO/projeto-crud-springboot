@@ -22,7 +22,7 @@ public class ProdutoService {
 
     public Produto obterProduto(long id){
         return produtoRepository.findById(id).orElseThrow(
-            () -> new RecursoNaoEncontradoException("Produto de id "+id+" não encontrado!")); 
+            () -> new RecursoNaoEncontradoException("Produto com id "+id+" não encontrado!")); 
     }
     
     public Produto salvarProduto(Produto produto){

@@ -10,8 +10,10 @@ import jakarta.persistence.Table;
 @Entity
 @Table(name="produtos")
 public class Produto {
-
+    
     @Id
+    // @GeneratedValue(strategy = GenerationType.IDENTITY)   
+    // foi feito assim pois a versao do oracle 11g não da suporte ao GenerationType.IDENTITY só aparti do oracle 12g 
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "produto_seq")
     @SequenceGenerator(name = "produto_seq", sequenceName = "produto_seq", allocationSize = 1 )
     private Long id;
